@@ -651,11 +651,11 @@ For dark tables, we recommend using our [text or background utilities]({{< docsr
 
 ### Table head
 
-Similar to tables and dark tables, use the modifier classes `.thead-light` or `.thead-dark` to make `<thead>`s appear light or dark gray.
+Similar to tables and dark tables, use utility classes to create different colors `<thead>` elements. Here we're using a combination of background-color (`.bg-*`), border-color (`.border-*`), and text color (`.color-`) to create different looks.
 
 {{< example >}}
 <table class="table">
-  <thead class="thead-dark">
+  <thead class="bg-dark text-white border-black">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -686,7 +686,7 @@ Similar to tables and dark tables, use the modifier classes `.thead-light` or `.
 </table>
 
 <table class="table">
-  <thead class="thead-light">
+  <thead class="bg-light border-gray-500">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
