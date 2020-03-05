@@ -8,11 +8,15 @@
   color: $table-color;
   vertical-align: $table-cell-vertical-align;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  border-color: $table-border-color;
 
   th,
   td {
     padding: $table-cell-padding;
-    border-bottom: $table-border-width solid $table-border-color;
+    // Table cells will only inherit if you use longhand properties
+    border-color: inherit;
+    border-bottom-style: solid;
+    border-bottom-width: $table-border-width;
   }
 
   tbody {
@@ -21,11 +25,12 @@
 
   thead th {
     vertical-align: bottom;
-    border-bottom-color: $table-head-border-color;
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
+    border-color: inherit;
+    border-top-style: solid;
+    border-top-width: (2 * $table-border-width);
   }
 }
 
@@ -47,18 +52,12 @@
 // Add or remove borders all around the table and between all the columns.
 
 .table-bordered {
-  border: $table-border-width solid $table-border-color;
+  border-width: $table-border-width;
 
   th,
   td {
-    border: $table-border-width solid $table-border-color;
-  }
-
-  thead {
-    th,
-    td {
-      border-bottom-width: 2 * $table-border-width;
-    }
+    border-style: solid;
+    border-width: $table-border-width;
   }
 }
 
@@ -127,36 +126,6 @@
       color: $table-head-color;
       background-color: $table-head-bg;
       border-color: $table-border-color;
-    }
-  }
-}
-
-.table-dark {
-  color: $table-dark-color;
-  background-color: $table-dark-bg;
-
-  th,
-  td,
-  thead th {
-    border-color: $table-dark-border-color;
-  }
-
-  &.table-bordered {
-    border: 0;
-  }
-
-  &.table-striped {
-    tbody tr:nth-of-type(#{$table-striped-order}) {
-      background-color: $table-dark-accent-bg;
-    }
-  }
-
-  &.table-hover {
-    tbody tr {
-      &:hover {
-        color: $table-dark-hover-color;
-        background-color: $table-dark-hover-bg;
-      }
     }
   }
 }
