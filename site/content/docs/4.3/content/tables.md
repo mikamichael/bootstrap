@@ -119,7 +119,7 @@ Invert the colors of a table—with light text on dark backgrounds—via [utilit
 </table>
 {{< /example >}}
 
-And because this happens with utilities, you have some flexibility in how you style your tables relative to their context. For example, if your page is already dark gray with lighter text, you don't need to set every utility on the `<table>`—just `.border-gray-700`.
+And because this happens with utilities, you have some flexibility in how you style your tables relative to their context. For example, **assuming your page is already dark gray** with lighter text, you don't need to set every utility on the `<table>`—just `.border-gray-700`.
 
 {{< example class="bg-dark text-white" >}}
 <table class="table border-gray-700">
