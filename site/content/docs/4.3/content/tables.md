@@ -296,7 +296,9 @@ Add `.table-borderless` for a table without borders.
 
 ### Striped rows
 
-Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`. You can customize which rows are highlighted by changing the `$table-striped-order` variable from `odd` (default) to `even`. To ensure compatibility with other table classes, we use a gradient `background-image` hack that blends the striping with any other `background-color`.
+Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`. You can customize which rows are highlighted by changing the `$table-striped-order` variable from `odd` (default) to `even`.
+
+To ensure background colors also work with striped rows, we use a `background-image` gradient that will overlay onto any `background-color`.
 
 {{< example >}}
 <table class="table table-striped">
@@ -403,7 +405,7 @@ And also works with table color classes:
 
 ### Hoverable rows
 
-Add `.table-hover` to enable a hover state on table rows within a `<tbody>`. To ensure compatibility with other table classes, we use a gradient `background-image` hack that overlays a translucent cover onto a row's `background-color`.
+Add `.table-hover` to enable a hover state on table rows within a `<tbody>`. To ensure background colors also work with hovered rows, we use a `background-image` gradient that will overlay onto any `background-color`.
 
 {{< example >}}
 <table class="table table-hover">
