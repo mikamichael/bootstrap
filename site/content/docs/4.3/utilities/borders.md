@@ -42,7 +42,6 @@ Change the border color using utilities built on our theme colors. We've also in
 {{< /border.inline >}}
 
 <span class="border border-white"></span>
-<span class="border border-gray-200"></span>
 <span class="border border-gray-500"></span>
 <span class="border border-gray-700"></span>
 <span class="border border-black"></span>
