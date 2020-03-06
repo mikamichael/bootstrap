@@ -76,7 +76,7 @@
 
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
-    background-color: $table-accent-bg;
+    background-image: linear-gradient($table-accent-bg, $table-accent-bg);
   }
 }
 
@@ -89,7 +89,7 @@
   tbody tr {
     &:hover {
       color: $table-hover-color;
-      background-color: $table-hover-bg;
+      background-image: linear-gradient($table-hover-bg, $table-hover-bg);
     }
   }
 }

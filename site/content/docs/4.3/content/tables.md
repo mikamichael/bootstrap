@@ -154,76 +154,6 @@ And because this happens with utilities, you have some flexibility in how you st
 </table>
 {{< /example >}}
 
-### Striped rows
-
-Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`.
-
-{{< example >}}
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-{{< /example >}}
-
-{{< example >}}
-<table class="table table-striped bg-dark text-white border-gray-700">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-{{< /example >}}
-
 ### Bordered
 
 Add `.table-bordered` for borders on all sides of the table and cells.
@@ -364,9 +294,116 @@ Add `.table-borderless` for a table without borders.
 </table>
 {{< /example >}}
 
+### Striped rows
+
+Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`. You can customize which rows are highlighted by changing the `$table-striped-order` variable from `odd` (default) to `even`. To ensure compatibility with other table classes, we use a gradient `background-image` hack that blends the striping with any other `background-color`.
+
+{{< example >}}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{{< /example >}}
+
+Works on dark backgrounds:
+
+{{< example >}}
+<table class="table table-striped bg-dark text-white border-gray-700">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{{< /example >}}
+
+And also works with table color classes:
+
+{{< example >}}
+<table class="table table-striped">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-primary">
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr class="table-primary">
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr class="table-primary">
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{{< /example >}}
+
 ### Hoverable rows
 
-Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
+Add `.table-hover` to enable a hover state on table rows within a `<tbody>`. To ensure compatibility with other table classes, we use a gradient `background-image` hack that overlays a translucent cover onto a row's `background-color`.
 
 {{< example >}}
 <table class="table table-hover">
@@ -400,6 +437,8 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
 </table>
 {{< /example >}}
 
+`.table-hover` also works on dark tables:
+
 {{< example >}}
 <table class="table table-hover bg-dark text-white border-gray-700">
   <thead>
@@ -412,6 +451,40 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
   </thead>
   <tbody>
     <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{{< /example >}}
+
+As well as table row colors:
+
+{{< example >}}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-primary">
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
@@ -567,7 +640,7 @@ Use contextual classes from the [our theme colors]({{< docsref "/getting-started
 For dark tables, we recommend using our [text or background utilities]({{< docsref "/utilities/colors" >}}) to achieve similar styles.
 
 <div class="bd-example">
-  <table class="table bg-dark text-white">
+  <table class="table bg-dark border-gray-700 text-white">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -646,6 +719,66 @@ For dark tables, we recommend using our [text or background utilities]({{< docsr
 {{< callout info >}}
 {{< partial "callout-warning-color-assistive-technologies.md" >}}
 {{< /callout >}}
+
+## Nesting
+
+{{< example >}}
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <table class="table mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">A</th>
+              <td>First</td>
+              <td>Last</td>
+            </tr>
+            <tr>
+              <th scope="row">B</th>
+              <td>First</td>
+              <td>Last</td>
+            </tr>
+            <tr>
+              <th scope="row">C</th>
+              <td>First</td>
+              <td>Last</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{{< /example >}}
+
 
 ## Anatomy
 
